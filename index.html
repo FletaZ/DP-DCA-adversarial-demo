@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adversarial Defense Against Zero-Shot Voice Cloning</title>
+    <title>Proactive Protection Against Zero-Shot Voice Cloning With Imperceptible Perturbations</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -66,17 +66,16 @@
 </head>
 <body>
 
-    <h1>ADVERSARIAL DEFENSE AGAINST ZERO-SHOT VOICE CLONING VIA DYNAMIC PSYCHOACOUSTIC DUAL-CENTROID ALIGNMENT</h1>
+    <h1>PROACTIVE PROTECTION AGAINST ZERO-SHOT VOICE CLONING WITH IMPERCEPTIBLE PERTURBATIONS</h1>
 
-    <p><span class="bold-label">Authors:</span> Yiwei Hu, Kuntharrgyal Khysru, Jianguo Wei</p>
+    <p><span class="bold-label">Authors:</span> Yiwei Hu, Kuntharrgyal Khysru, Haiqiang Shi and Jianguo Wei.</p>
 
-    <p><span class="bold-label">Abstract:</span> Zero-shot text-to-speech and voice conversion have lowered the barrier to generating deepfake speech, giving rise to risks such as voice privacy leakage and malicious impersonation. Existing proactive defense methods still suffer from several limitations, including the complexity of multi-objective hyperparameter tuning, the inability of signal-to-noise ratio (SNR) to accurately characterize human auditory perception, and the lack of an explicit shift direction in identity confusion. To address these issues, this letter proposes Dynamic Psychoacoustic Dual-Centroid Alignment (DP-DCA), a proactive voice protection method that perturbs reference speech in the short-time Fourier transform (STFT) magnitude domain and jointly models directional identity confusion and dynamic psychoacoustic masking. The former suppresses source-speaker identity through opposite-centroid-guided alignment, while the latter constrains the perturbation distribution in a perceptually adaptive manner. Experiments on XTTS, YourTTS, and OpenVoice show that DP-DCA achieves high perceptual quality while maintaining strong speaker-identity protection.</p>
+    <p><span class="bold-label">Abstract:</span> Zero-shot text-to-speech (TTS) and voice conversion (VC) have lowered the barrier to generating deepfake speech, giving rise to risks such as voice privacy leakage and malicious impersonation. Existing proactive protection methods still suffer from several limitations, including the complexity of multi-objective hyperparameter tuning, the inability of signal-to-noise ratio (SNR) to accurately characterize human auditory perception, and the lack of an explicit shift direction in identity confusion. To address these issues, we propose Psychoacoustic Voice (PsyVo), a proactive voice protection method that perturbs reference speech in the short-time Fourier transform (STFT) magnitude domain and jointly models directional identity confusion and dynamic psychoacoustic masking. The former suppresses source-speaker identity through opposite-centroid-guided alignment, while the latter constrains the perturbation distribution in a perceptually adaptive manner. Experiments on XTTS, YourTTS, and OpenVoice show that PsyVo achieves high perceptual quality while maintaining strong defense effectiveness.</p>
 
     <div class="section-divider"></div>
 
-    <p>Here, we showcase the audio samples to demonstrate the effectiveness of our proposed DP-DCA method. We selected speech segments from 3 male and 3 female speakers from the VCTK dataset. For each speaker, we present four variations of the audio: <strong>'Reference Speech'</strong> is the original clean source speech; <strong>'DP-DCA'</strong> represents the reference speech protected by our adversarial perturbation; <strong>'TTS'</strong> is the speech synthesized using the clean reference speech (showing vulnerability to cloning); and <strong>'TTS*'</strong> is the speech synthesized using the DP-DCA protected reference speech (demonstrating the defensive capability of our method).</p>
+    <p>Here, we showcase the audio samples to demonstrate the effectiveness of our proposed PsyVo method. We selected speech segments from 3 male and 3 female speakers from the VCTK dataset. For each speaker, we present four variations of the audio: <strong>'Reference Speech'</strong> is the original clean source speech; <strong>'PsyVo'</strong> represents the reference speech protected by our adversarial perturbation; <strong>'TTS'</strong> is the speech synthesized using the clean reference speech (showing vulnerability to cloning); and <strong>'TTS*'</strong> is the speech synthesized using the PsyVo protected reference speech (demonstrating the defensive capability of our method). <strong>Specifically, our synthesized audio is generated using the XTTS v2 model, and the input text used for synthesis is identical to the text of the reference audio.</strong></p>
 
-    <!-- Speaker 1 -->
     <div class="speaker-title">p227</div>
     <div class="audio-container">
         <div class="audio-item">
@@ -84,7 +83,7 @@
             <audio controls preload="none"><source src="audio/ref_clean/p227_260_mic1.wav" type="audio/wav"></audio>
         </div>
         <div class="audio-item">
-            <span class="audio-label">DP-DCA:</span>
+            <span class="audio-label">PsyVo:</span>
             <audio controls preload="none"><source src="audio/ref_adv/p227_260_mic1_ref_adv.wav" type="audio/wav"></audio>
         </div>
         <div class="audio-item">
@@ -97,7 +96,6 @@
         </div>
     </div>
 
-    <!-- Speaker 2 -->
     <div class="speaker-title">p241</div>
     <div class="audio-container">
         <div class="audio-item">
@@ -105,7 +103,7 @@
             <audio controls preload="none"><source src="audio/ref_clean/p241_003_mic1.wav" type="audio/wav"></audio>
         </div>
         <div class="audio-item">
-            <span class="audio-label">DP-DCA:</span>
+            <span class="audio-label">PsyVo:</span>
             <audio controls preload="none"><source src="audio/ref_adv/p241_003_mic1_ref_adv.wav" type="audio/wav"></audio>
         </div>
         <div class="audio-item">
@@ -118,7 +116,6 @@
         </div>
     </div>
 
-    <!-- Speaker 3 -->
     <div class="speaker-title">p254</div>
     <div class="audio-container">
         <div class="audio-item">
@@ -126,7 +123,7 @@
             <audio controls preload="none"><source src="audio/ref_clean/p254_007_mic1.wav" type="audio/wav"></audio>
         </div>
         <div class="audio-item">
-            <span class="audio-label">DP-DCA:</span>
+            <span class="audio-label">PsyVo:</span>
             <audio controls preload="none"><source src="audio/ref_adv/p254_007_mic1_ref_adv.wav" type="audio/wav"></audio>
         </div>
         <div class="audio-item">
@@ -139,7 +136,6 @@
         </div>
     </div>
 
-    <!-- Speaker 4 -->
     <div class="speaker-title">p329</div>
     <div class="audio-container">
         <div class="audio-item">
@@ -147,7 +143,7 @@
             <audio controls preload="none"><source src="audio/ref_clean/p329_140_mic1.wav" type="audio/wav"></audio>
         </div>
         <div class="audio-item">
-            <span class="audio-label">DP-DCA:</span>
+            <span class="audio-label">PsyVo:</span>
             <audio controls preload="none"><source src="audio/ref_adv/p329_140_mic1_ref_adv.wav" type="audio/wav"></audio>
         </div>
         <div class="audio-item">
@@ -160,7 +156,6 @@
         </div>
     </div>
 
-    <!-- Speaker 5 -->
     <div class="speaker-title">p339</div>
     <div class="audio-container">
         <div class="audio-item">
@@ -168,7 +163,7 @@
             <audio controls preload="none"><source src="audio/ref_clean/p339_005_mic1.wav" type="audio/wav"></audio>
         </div>
         <div class="audio-item">
-            <span class="audio-label">DP-DCA:</span>
+            <span class="audio-label">PsyVo:</span>
             <audio controls preload="none"><source src="audio/ref_adv/p339_005_mic1_ref_adv.wav" type="audio/wav"></audio>
         </div>
         <div class="audio-item">
@@ -181,7 +176,6 @@
         </div>
     </div>
 
-    <!-- Speaker 6 -->
     <div class="speaker-title">p351</div>
     <div class="audio-container">
         <div class="audio-item">
@@ -189,7 +183,7 @@
             <audio controls preload="none"><source src="audio/ref_clean/p351_004_mic1.wav" type="audio/wav"></audio>
         </div>
         <div class="audio-item">
-            <span class="audio-label">DP-DCA:</span>
+            <span class="audio-label">PsyVo:</span>
             <audio controls preload="none"><source src="audio/ref_adv/p351_004_mic1_ref_adv.wav" type="audio/wav"></audio>
         </div>
         <div class="audio-item">
